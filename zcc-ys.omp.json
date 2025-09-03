@@ -11,7 +11,7 @@
             "fetch_version": true
           },
           "template": "\u2118 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }} {{ .Full }}{{ end }}",
-          "foreground": "yellow",
+          "foreground": "darkGray",
           "type": "python",
           "style": "plain"
         },
@@ -61,7 +61,6 @@
           "properties": {
             "cache_duration": "none",
             "folder_separator_icon": " | ",
-            "home_icon": "\uf46d",
             "style": "letter"
           },
           "template": "<darkGray>in </>{{ .Path }} ",
@@ -89,21 +88,6 @@
         }
       ],
       "newline": true
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "segments": [
-        {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": "[{{ .CurrentDate | date .Format }}]",
-          "foreground": "darkGray",
-          "type": "time",
-          "style": "plain"
-        }
-      ]
     },
     {
       "type": "prompt",
