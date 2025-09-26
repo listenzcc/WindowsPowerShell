@@ -19,11 +19,18 @@ function Measure-CodeExecution {
 
 function Load-Conda {
     Invoke-Expression $env:HOMEPATH\miniconda3\shell\condabin\conda-hook.ps1
+
+    $c = $env:CONDA_EXE
+    $c = Split-Path $c -Parent
+    $c = Split-Path $c -Parent
+
+    $env:Path = "$c;$c\Library\bin;$c\Scripts;$c\condabin;$env:Path"
 }
 
 function Use-Conda {
     conda activate $env:CONDA_DEFAULT_ENV
     conda env list
+    Write-Host "# conda uses $env:CONDA_PROMPT_MODIFIER" -ForegroundColor yellow
 }
 
 
@@ -54,6 +61,5 @@ Set-Alias ll ls
 #     (& "C:\Users\liste\miniconda3\Scripts\conda.exe" "shell.powershell" "hook") | Out-String | ? { $_ } | Invoke-Expression
 # }
 
-$env:Path = "C:\Users\liste\miniconda3;C:\Users\liste\miniconda3\Library\mingw-w64\bin;C:\Users\liste\miniconda3\Library\usr\bin;C:\Users\liste\miniconda3\Library\bin;C:\Users\liste\miniconda3\Scripts;C:\Users\liste\miniconda3\bin;C:\Users\liste\miniconda3\condabin;$env:Path"
 
 #endregion
