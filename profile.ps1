@@ -1,6 +1,7 @@
 # File: profile.ps1
 # Author: Chuncheng Zhang
-# Date: 20250928
+# Date: 2025-09-28
+# Description: Powershell profile.
 
 # ----------------------------------------
 # ---- Defines ----
