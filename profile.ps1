@@ -3,8 +3,6 @@
 # Date: 2025-09-28
 # Description: Powershell profile.
 
-$env:HOMEPATH = 'C:\\Users\\liste'
-
 # ----------------------------------------
 # ---- Defines ----
 function Measure-CodeExecution {
@@ -29,7 +27,7 @@ function Measure-CodeExecution {
 }
 
 function Load-Conda {
-    Invoke-Expression $env:HOMEPATH\miniconda3\shell\condabin\conda-hook.ps1
+    Invoke-Expression $env:USERPROFILE\miniconda3\shell\condabin\conda-hook.ps1
 
     $c = $env:CONDA_EXE
     $c = Split-Path $c -Parent
