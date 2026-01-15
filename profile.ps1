@@ -3,6 +3,8 @@
 # Date: 2025-09-28
 # Description: Powershell profile.
 
+$env:HOMEPATH = 'C:\\Users\\liste'
+
 # ----------------------------------------
 # ---- Defines ----
 function Measure-CodeExecution {
